@@ -8,3 +8,13 @@ body {
 h1 a {
     color: red;
 }   
+
+.nav-left {
+    margin-right: auto;
+
+}
+
+.nav-right {
+    display: flex;
+    padding-top: 2rem;
+}
