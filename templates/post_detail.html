@@ -5,4 +5,6 @@
     <p>Autor: {{ post.author }}</p>
     <p>Fecha de publicación: {{ post.created_at }}</p>
     <p>{{ post.content }}</p>
+
+    <a href="{% url 'post_update' post.pk %}">Editar post</a>
 {% endblock content %}
