@@ -20,7 +20,16 @@
             <a href="{% url 'post_new' %}">Nueva Publicación</a>
         </div>    
     </header>
-    
+    {% if user.is_authenticated %}
+        <p>Hola, {{ user.username }}!</p>
+        <form action="{% url 'logout' %}" method="post">
+            {% csrf_token %}
+            <button type="submit">Cerrar sesión</button>
+        </form>
+    {% else %}
+        <p><a href="{% url 'login' %}">Iniciar sesión</a></p>
+    {% endif %}
+
     {% block content %}
     
     {% endblock content %}
