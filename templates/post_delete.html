@@ -1,0 +1,10 @@
+{% extends "_base.html" %}
+
+{% block content %}
+    <h1>Borrar una publicación</h1>
+    <form action="" method="post">
+        {% csrf_token %}
+        <p>Está seguro que desea borrar el post {{ post.title }}?</p>
+        <input type="submit" value="Confirmar">
+    </form>
+{% endblock content %}
