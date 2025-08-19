@@ -6,6 +6,8 @@
     <p>Fecha de publicación: {{ post.created_at }}</p>
     <p>{{ post.content }}</p>
 
-    <a href="{% url 'post_update' post.pk %}">Editar post</a>
-    <a href="{% url 'post_delete' post.pk %}">Borrar post</a>
+    {% if blog.author.pk == request.user.pk %}
+        <a href="{% url 'post_update' post.pk %}">Editar post</a>
+        <a href="{% url 'post_delete' post.pk %}">Borrar post</a>
+    {% endif %}
 {% endblock content %}
