@@ -6,7 +6,7 @@
     <p>Fecha de publicación: {{ post.created_at }}</p>
     <p>{{ post.content }}</p>
 
-    {% if blog.author.pk == request.user.pk %}
+    {% if user.is_authenticated and user == post.author %}
         <a href="{% url 'post_update' post.pk %}">Editar post</a>
         <a href="{% url 'post_delete' post.pk %}">Borrar post</a>
     {% endif %}
